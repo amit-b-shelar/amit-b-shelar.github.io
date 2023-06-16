@@ -6,3 +6,7 @@
     height: 24px;
     border: 1px solid lightgray;
 }
+table tr td:first-child {
+    font-weight: bold;
+    width: 50%;
+}
