@@ -22,12 +22,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   );
   disableCountry = true;
 
-  private sub: Subscription | undefined;
+  private regionSubscription: Subscription | undefined;
 
   constructor(private store: Store<CountryListState>) {}
 
   ngOnInit(): void {
-    this.sub = this.currentRegion$.subscribe(
+    this.regionSubscription = this.currentRegion$.subscribe(
       (region) => (this.disableCountry = region.length === 0)
     );
   }
@@ -41,6 +41,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.sub && this.sub.unsubscribe();
+    this.regionSubscription && this.regionSubscription.unsubscribe();
   }
 }
