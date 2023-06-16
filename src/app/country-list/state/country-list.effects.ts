@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CountryListService } from '../services/country-list.service';
 import { CountryListActions } from './country-list.actions';
-import { exhaustMap, map } from 'rxjs/operators';
+import { catchError, exhaustMap, map } from 'rxjs/operators';
 import { CountryDetail } from './country-list.model';
-import { of } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
 
 @Injectable()
 export class CountryListEffects {
@@ -22,7 +22,7 @@ export class CountryListEffects {
         if (this.cache.has(region)) {
           // Return From Cache
           return of(
-            CountryListActions.setCountries({
+            CountryListActions.loadCountriesSuccess({
               countries: this.cache.get(region) as CountryDetail[],
             })
           );
@@ -31,8 +31,9 @@ export class CountryListEffects {
           return this.countryListService.getCountries(region).pipe(
             map((countries) => {
               this.cache.set(region, countries);
-              return CountryListActions.setCountries({ countries });
-            })
+              return CountryListActions.loadCountriesSuccess({ countries });
+            }),
+            catchError(() => EMPTY)
           );
         }
       })
