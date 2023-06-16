@@ -1,0 +1,30 @@
+<div class="container-sm container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-sm-6 col-12">
+      <app-custom-dropdown
+        label="region"
+        [items]="regions$ | async"
+        [value]="currentRegion$ | async"
+        (onSelectedItemChanged)="OnSelectedRegionChanged($event)"
+      ></app-custom-dropdown>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-sm-6 col-12">
+      <app-custom-dropdown
+        label="country"
+        [items]="countries$ | async"
+        [value]="currentCountry$ | async"
+        (onSelectedItemChanged)="OnSelectedCountryChanged($event)"
+        [disabled]="disableCountry"
+      ></app-custom-dropdown>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <app-country-details-view
+        [countryDetails]="currentCountryDetail$ | async"
+      ></app-country-details-view>
+    </div>
+  </div>
+</div>

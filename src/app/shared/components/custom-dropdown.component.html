@@ -1,0 +1,20 @@
+<div class="mb-3">
+  <label for="select-{{ label }}" class="form-label">{{
+    label | titlecase
+  }}</label>
+  <select
+    class="form-select"
+    id="select-{{ label }}"
+    (change)="selectedItemChanged($event)"
+    [disabled]="disabled"
+  >
+    <option default value="">Select...</option>
+    <option
+      *ngFor="let item of items"
+      value="{{ item }}"
+      [selected]="item === value"
+    >
+      {{ item }}
+    </option>
+  </select>
+</div>

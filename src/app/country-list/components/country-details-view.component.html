@@ -1,0 +1,30 @@
+<div *ngIf="countryDetails" class="table-responsive">
+  <h4 class="text-center">Country Details</h4>
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Capital</th>
+        <th>Populations</th>
+        <th>Currencies</th>
+        <th>Flag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ countryDetails.name }}</td>
+        <td>{{ countryDetails.capital }}</td>
+        <td>{{ countryDetails.population | number }}</td>
+        <td>{{ currencyDisplay(countryDetails.currencies) }}</td>
+        <td>
+          <img
+            class="country-image"
+            [src]="countryDetails.flag"
+            loading="lazy"
+            alt="Country Flag"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
