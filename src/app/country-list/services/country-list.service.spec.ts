@@ -41,13 +41,11 @@ describe('CountryListService', () => {
     httpClientSpy.get.and.returnValue(of(expectedCountries));
     service.getCountries('Asia').subscribe({
       next: (countries) => {
-        expect(countries)
-          .withContext('expected countries')
-          .toEqual(expectedCountries);
+        expect(countries).toEqual(expectedCountries);
         done();
       },
       error: done.fail,
     });
-    expect(httpClientSpy.get.calls.count()).withContext('one call').toBe(1);
+    expect(httpClientSpy.get.calls.count()).toBe(1);
   });
 });
