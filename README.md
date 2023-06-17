@@ -42,10 +42,10 @@ Start the server
 
 ## Usage
 
-    1. Select a region from the "Region" dropdown.
-    2. Once a region is selected, the "Country" dropdown will be enabled and populated with countries from the selected region.
-    3. Select a country from the "Country" dropdown.
-    4. The country details, including Name, Capital, Population, Currencies, and Flag, will be displayed in a table.
+- Select a region from the "Region" dropdown.
+- Once a region is selected, the "Country" dropdown will be enabled and populated with countries from the selected region.
+- Select a country from the "Country" dropdown.
+- The country details, including Name, Capital, Population, Currencies, and Flag, will be displayed in a table.
 
 
 ## Screenshots
