@@ -27,8 +27,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private store: Store<CountryListState>) {}
 
   ngOnInit(): void {
-    this.regionSubscription = this.currentRegion$.subscribe(
-      (region) => (this.disableCountry = region.length === 0)
+    this.regionSubscription = this.countries$.subscribe(
+      (countries) => (this.disableCountry = countries.length === 0)
     );
   }
 
