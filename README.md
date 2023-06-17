@@ -1,27 +1,60 @@
-# Assessment
+# Angular Countries App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This is an Angular application that displays a list of regions, countries, and country details using Angular, TypeScript, Observables, and NGRX.
 
-## Development server
+## Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+https://amit-b-shelar.github.io/
 
-## Code scaffolding
+## Source Repository
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+https://github.com/amit-b-shelar/amit-b-shelar.github.io
 
-## Build
+## Run Locally
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone the project
 
-## Running unit tests
+```bash
+  git clone https://github.com/amit-b-shelar/amit-b-shelar.github.io.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Go to the project directory
 
-## Running end-to-end tests
+```bash
+  cd amit-b-shelar.github.io
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Install dependencies
 
-## Further help
+```bash
+  npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Start the server
+
+```bash
+  npm run start
+```
+
+## Usage
+
+    1. Select a region from the "Region" dropdown.
+    2. Once a region is selected, the "Country" dropdown will be enabled and populated with countries from the selected region.
+    3. Select a country from the "Country" dropdown.
+    4. The country details, including Name, Capital, Population, Currencies, and Flag, will be displayed in a table.
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+## Authors
+
+- [@amit-b-shelar](https://github.com/amit-b-shelar)
+
+## 🚀 About Me
+
+I'm a full stack developer...
+
+## Licence
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
