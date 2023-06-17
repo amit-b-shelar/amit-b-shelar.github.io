@@ -1,27 +1,75 @@
-# Assessment
+# Angular Countries App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This is an Angular application that displays a list of regions, countries, and country details using Angular, TypeScript, Observables, and NGRX.
 
-## Development server
+## Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+https://amit-b-shelar.github.io/
 
-## Code scaffolding
+## Source Repository
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+https://github.com/amit-b-shelar/amit-b-shelar.github.io
 
-## Build
+## Run Locally
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone the project
 
-## Running unit tests
+```bash
+  git clone https://github.com/amit-b-shelar/amit-b-shelar.github.io.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Go to the project directory
 
-## Running end-to-end tests
+```bash
+  cd amit-b-shelar.github.io
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Install dependencies
 
-## Further help
+```bash
+  npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Start the server
+
+```bash
+  npm run start
+```
+
+## Usage
+
+- Select a region from the "Region" dropdown.
+- Once a region is selected, the "Country" dropdown will be enabled and populated with countries from the selected region.
+- Select a country from the "Country" dropdown.
+- The country details, including Name, Capital, Population, Currencies, and Flag, will be displayed in a table.
+
+## Screenshots
+
+![App Screenshot](https://amit-b-shelar.github.io/assets/assessment.jpg)
+
+## Optimizations & Efficiency
+
+- **Caching** - Added caching in NgRx Effect to save response of country details against region.
+- **Reusable Component** - Created reusable dropdown component in Shared Module.
+- **State Optimization** - Saved only required fields from country details API response to optimize application state.
+- **Responsive** - mobile first approach
+- **Unit Testing** - Added Unit Tests
+- **Type Safety** - Used Typescript interfaces for type safety.
+
+## Coding Style and Standards
+
+- The coding style follows the Angular Style Guide (https://angular.io/guide/styleguide).
+- CSS styles follows the Bootstrap Style Guide (https://rapidwebltd.github.io/bootstrap-styleguide/)
+- Code is formatted using Prettier.
+
+## Authors
+
+- [@amit-b-shelar](https://github.com/amit-b-shelar)
+
+## 🚀 About Me
+
+I'm a full stack developer...
+
+## Licence
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
