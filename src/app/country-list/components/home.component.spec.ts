@@ -44,10 +44,10 @@ describe('HomeComponent', () => {
 
   it('should dispatch setCurrentRegion on store', () => {
     spyOn(store, 'dispatch');
-    component.OnSelectedRegionChanged('Asia');
+    component.OnSelectedRegionChanged('Europe');
     expect(store.dispatch).toHaveBeenCalled();
     expect(store.dispatch).toHaveBeenCalledWith(
-      CountryListActions.setCurrentRegion({ region: 'Asia' })
+      CountryListActions.setCurrentRegion({ region: 'Europe' })
     );
   });
 });
