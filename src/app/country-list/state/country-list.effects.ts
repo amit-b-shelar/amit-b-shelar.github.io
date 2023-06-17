@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CountryListService } from '../services/country-list.service';
 import { CountryListActions } from './country-list.actions';
-import { catchError, exhaustMap, map } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { CountryDetail } from './country-list.model';
 import { EMPTY, of } from 'rxjs';
 
@@ -18,7 +18,7 @@ export class CountryListEffects {
   loadCountries$ = createEffect(() =>
     this.actions$.pipe(
       ofType(CountryListActions.setCurrentRegion),
-      exhaustMap(({ region }) => {
+      switchMap(({ region }) => {
         if (this.cache.has(region)) {
           // Return From Cache
           return of(

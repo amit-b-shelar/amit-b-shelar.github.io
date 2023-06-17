@@ -6,6 +6,7 @@ export const CountryListActions = createActionGroup({
   events: {
     'Set Current Region': props<{ region: string }>(),
     'Set Current Country': props<{ country: string }>(),
+    'Reset Countries': emptyProps(),
     'Load Countries Success': props<{ countries: CountryDetail[] }>(),
     'Load Countries Error': emptyProps(),
   },

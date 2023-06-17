@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   OnSelectedRegionChanged(region: string) {
+    this.store.dispatch(CountryListActions.resetCountries());
     this.store.dispatch(CountryListActions.setCurrentRegion({ region }));
   }
 
