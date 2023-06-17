@@ -17,12 +17,15 @@ export const countryListReducer = createReducer(
       currentRegion: action.region,
     };
   }),
-  on(CountryListActions.setCountries, (state, action): CountryListState => {
-    return {
-      ...state,
-      countries: action.countries,
-    };
-  }),
+  on(
+    CountryListActions.loadCountriesSuccess,
+    (state, action): CountryListState => {
+      return {
+        ...state,
+        countries: action.countries,
+      };
+    }
+  ),
   on(
     CountryListActions.setCurrentCountry,
     (state, action): CountryListState => {
@@ -31,5 +34,10 @@ export const countryListReducer = createReducer(
         currentCountry: action.country,
       };
     }
-  )
+  ),
+  on(CountryListActions.loadCountriesError, (state) => ({
+    ...state,
+    countries: [],
+    currentCountry: '',
+  }))
 );

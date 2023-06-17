@@ -9,8 +9,8 @@ export class CountryListService {
   constructor(private http: HttpClient) {}
 
   getCountries(region: string): Observable<CountryDetail[]> {
-    const apiUrl = `https://restcountries.com/v2/region/${region}`;
     if (region) {
+      const apiUrl = `https://restcountries.com/v2/region/${region}`;
       return this.http.get<CountryDetail[]>(apiUrl).pipe(
         map((countries) => {
           return countries.map(
