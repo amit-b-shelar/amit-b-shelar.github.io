@@ -33,7 +33,13 @@ export class CountryListEffects {
               this.cache.set(region, countries);
               return CountryListActions.loadCountriesSuccess({ countries });
             }),
-            catchError(() => EMPTY)
+            catchError((error) =>
+              of(
+                CountryListActions.loadCountriesError({
+                  error,
+                })
+              )
+            )
           );
         }
       })

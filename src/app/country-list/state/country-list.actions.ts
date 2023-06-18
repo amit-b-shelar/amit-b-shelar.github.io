@@ -8,6 +8,6 @@ export const CountryListActions = createActionGroup({
     'Set Current Country': props<{ country: string }>(),
     'Reset Countries': emptyProps(),
     'Load Countries Success': props<{ countries: CountryDetail[] }>(),
-    'Load Countries Error': emptyProps(),
+    'Load Countries Error': props<{ error: any }>(),
   },
 });
