@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   regions$ = this.store.select(CountryListSelectors.selectRegions);
   currentRegion$ = this.store.select(CountryListSelectors.selectCurrentRegion);
   countries$ = this.store.select(CountryListSelectors.selectCountries);
@@ -22,8 +22,6 @@ export class HomeComponent implements OnInit {
   );
 
   constructor(private store: Store<CountryListState>) {}
-
-  ngOnInit(): void {}
 
   onSelectedRegionChanged(region: string) {
     this.store.dispatch(CountryListActions.setCurrentRegion({ region }));

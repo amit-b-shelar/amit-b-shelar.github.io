@@ -35,7 +35,7 @@ describe('HomeComponent', () => {
 
   it('should dispatch setCurrentCountry on store', () => {
     spyOn(store, 'dispatch');
-    component.OnSelectedCountryChanged('India');
+    component.onSelectedCountryChanged('India');
     expect(store.dispatch).toHaveBeenCalled();
     expect(store.dispatch).toHaveBeenCalledWith(
       CountryListActions.setCurrentCountry({ country: 'India' })
@@ -44,7 +44,7 @@ describe('HomeComponent', () => {
 
   it('should dispatch setCurrentRegion on store', () => {
     spyOn(store, 'dispatch');
-    component.OnSelectedRegionChanged('Europe');
+    component.onSelectedRegionChanged('Europe');
     expect(store.dispatch).toHaveBeenCalled();
     expect(store.dispatch).toHaveBeenCalledWith(
       CountryListActions.setCurrentRegion({ region: 'Europe' })
