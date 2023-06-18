@@ -11,37 +11,41 @@ const initialState: CountryListState = {
 
 export const countryListReducer = createReducer(
   initialState,
-  on(CountryListActions.setCurrentRegion, (state, action): CountryListState => {
-    return {
+  on(
+    CountryListActions.setCurrentRegion,
+    (state, action): CountryListState => ({
       ...state,
+      countries: [],
       currentRegion: action.region,
-    };
-  }),
+    })
+  ),
   on(
     CountryListActions.loadCountriesSuccess,
-    (state, action): CountryListState => {
-      return {
-        ...state,
-        countries: action.countries,
-      };
-    }
+    (state, action): CountryListState => ({
+      ...state,
+      countries: action.countries,
+    })
   ),
   on(
     CountryListActions.setCurrentCountry,
-    (state, action): CountryListState => {
-      return {
-        ...state,
-        currentCountry: action.country,
-      };
-    }
+    (state, action): CountryListState => ({
+      ...state,
+      currentCountry: action.country,
+    })
   ),
-  on(CountryListActions.loadCountriesError, (state) => ({
-    ...state,
-    countries: [],
-    currentCountry: '',
-  })),
-  on(CountryListActions.resetCountries,(state) => ({
-    ...state,
-    countries: []
-  }))
+  on(
+    CountryListActions.loadCountriesError,
+    (state): CountryListState => ({
+      ...state,
+      countries: [],
+      currentCountry: '',
+    })
+  ),
+  on(
+    CountryListActions.resetCountries,
+    (state): CountryListState => ({
+      ...state,
+      countries: [],
+    })
+  )
 );

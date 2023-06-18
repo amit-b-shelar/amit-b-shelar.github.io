@@ -16,7 +16,7 @@
         [items]="countries$ | async"
         [value]="currentCountry$ | async"
         (onSelectedItemChanged)="OnSelectedCountryChanged($event)"
-        [disabled]="disableCountry"
+        [disabled]="(countries$ | async)?.length === 0"
       ></app-custom-dropdown>
     </div>
   </div>

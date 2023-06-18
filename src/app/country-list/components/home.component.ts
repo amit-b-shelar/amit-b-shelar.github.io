@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
   regions$ = this.store.select(CountryListSelectors.selectRegions);
   currentRegion$ = this.store.select(CountryListSelectors.selectCurrentRegion);
   countries$ = this.store.select(CountryListSelectors.selectCountries);
@@ -20,28 +20,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentCountryDetail$ = this.store.select(
     CountryListSelectors.selectCurrentCountryDetail
   );
-  disableCountry = true;
-
-  private regionSubscription: Subscription | undefined;
 
   constructor(private store: Store<CountryListState>) {}
 
-  ngOnInit(): void {
-    this.regionSubscription = this.countries$.subscribe(
-      (countries) => (this.disableCountry = countries.length === 0)
-    );
-  }
+  ngOnInit(): void {}
 
   OnSelectedRegionChanged(region: string) {
-    this.store.dispatch(CountryListActions.resetCountries());
     this.store.dispatch(CountryListActions.setCurrentRegion({ region }));
   }
 
   OnSelectedCountryChanged(country: string) {
     this.store.dispatch(CountryListActions.setCurrentCountry({ country }));
-  }
-
-  ngOnDestroy(): void {
-    this.regionSubscription && this.regionSubscription.unsubscribe();
   }
 }

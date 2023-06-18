@@ -11,6 +11,6 @@ export class CountryDetailsViewComponent {
   @Input()
   countryDetails: CountryDetail | null = null;
 
-  currencyDisplay = (currencies: CurrencyDetail[]) =>
+  currencyDisplay = (currencies: CurrencyDetail[]): string =>
     currencies.map((c) => c.code).join();
 }
