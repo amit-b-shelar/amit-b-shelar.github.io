@@ -5,7 +5,7 @@
         label="region"
         [items]="regions$ | async"
         [value]="currentRegion$ | async"
-        (onSelectedItemChanged)="OnSelectedRegionChanged($event)"
+        (onSelectedItemChanged)="onSelectedRegionChanged($event)"
       ></app-custom-dropdown>
     </div>
   </div>
@@ -15,7 +15,7 @@
         label="country"
         [items]="countries$ | async"
         [value]="currentCountry$ | async"
-        (onSelectedItemChanged)="OnSelectedCountryChanged($event)"
+        (onSelectedItemChanged)="onSelectedCountryChanged($event)"
         [disabled]="(countries$ | async)?.length === 0"
       ></app-custom-dropdown>
     </div>

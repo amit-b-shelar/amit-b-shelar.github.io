@@ -25,11 +25,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  OnSelectedRegionChanged(region: string) {
+  onSelectedRegionChanged(region: string) {
     this.store.dispatch(CountryListActions.setCurrentRegion({ region }));
   }
 
-  OnSelectedCountryChanged(country: string) {
+  onSelectedCountryChanged(country: string) {
     this.store.dispatch(CountryListActions.setCurrentCountry({ country }));
   }
 }
