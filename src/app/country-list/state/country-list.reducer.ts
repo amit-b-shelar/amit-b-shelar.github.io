@@ -40,12 +40,5 @@ export const countryListReducer = createReducer(
       countries: [],
       currentCountry: '',
     })
-  ),
-  on(
-    CountryListActions.resetCountries,
-    (state): CountryListState => ({
-      ...state,
-      countries: [],
-    })
   )
 );
